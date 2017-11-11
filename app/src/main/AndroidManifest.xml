@@ -27,7 +27,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".OCR.OCRActivity"></activity>
+        <activity android:name=".OCR.OCRActivity" />
     </application>
 
 </manifest>

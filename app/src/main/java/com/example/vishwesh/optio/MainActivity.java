@@ -18,6 +18,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.vishwesh.optio.OCR.OCRActivity;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -35,21 +37,24 @@ public class MainActivity extends Activity {
         findViewById(R.id.idExtractText).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.idScanContact).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                startActivity(intent);
             }
         });
 
         findViewById(R.id.idScanPoster).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                startActivity(intent);
             }
         });
     }
