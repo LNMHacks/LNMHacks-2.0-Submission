@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="10dp"
-                    android:text="Acquainting the user with the power of scanning text from anywhere like website or email Id which could be automatically sent to the respective service." />
+                    android:text="Acquainting the user with the power of scanning text from anywhere and user can extract website url ,email-Id and copy that text which could be automatically sent to the respective service." />
             </LinearLayout>
 
 
