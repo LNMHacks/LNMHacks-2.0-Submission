@@ -11,15 +11,21 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Iterator;
+import java.util.Set;
 
 
 public class MainActivity extends Activity {
+    TextView textv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        textv=(TextView)findViewById(R.id.text);
         LocalBroadcastManager.getInstance(this).registerReceiver(onNotice, new IntentFilter("Msg"));
     }
 
@@ -51,7 +57,22 @@ public class MainActivity extends Activity {
             // String pack = intent.getStringExtra("package");
             String title = intent.getStringExtra("title");
             String text = intent.getStringExtra("text");
-            String body = intent.getStringExtra("body");
+            Bundle bundle=intent.getExtras();
+            Set<String> keyset=bundle.keySet();
+            String result="";
+            final Iterator<String> iterator=keyset.iterator();
+
+
+            while(iterator.hasNext()){
+                final String key=iterator.next();
+                final Object o=bundle.get(key);
+                result=result+o;
+
+
+            }
+            Toast.makeText(context, "body" + result, Toast.LENGTH_SHORT).show();
+            textv.setText(result);
+
             //int id = intent.getIntExtra("icon",0);
 
             Context remotePackageContext = null;
@@ -66,7 +87,7 @@ public class MainActivity extends Activity {
                 if (byteArray != null) {
                     bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 }
-                Toast.makeText(context, "Title:- " + title + " Text:-" + text + "Body:- " + body, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Title:- " + title + " Text:-" + text , Toast.LENGTH_LONG).show();
 
             } catch (Exception e) {
                 e.printStackTrace();
