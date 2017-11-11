@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
@@ -84,6 +85,7 @@ public class OCRActivity extends AppCompatActivity {
                     if (site.size() > 0) {
                         if (site.size() == 1) {
                             //open directly
+                            openBrowser(String.valueOf(site.get(0)));
                         } else {
                             //show dialog
                             showDialogWithItems(site, 2);
@@ -91,6 +93,7 @@ public class OCRActivity extends AppCompatActivity {
                     } else if (email.size() > 0) {
                         if (email.size() == 1) {
                             //open directly
+                            openEmail(String.valueOf(email.get(0)));
                         } else {
                             //show dialog
                             showDialogWithItems(site, 2);
@@ -98,6 +101,7 @@ public class OCRActivity extends AppCompatActivity {
                     } else if (mobile.size() > 0) {
                         if (mobile.size() == 1) {
                             //open directly
+                            openDialer(String.valueOf(mobile.get(0)));
                         } else {
                             //show dialog
                             showDialogWithItems(site, 3);
@@ -226,21 +230,57 @@ public class OCRActivity extends AppCompatActivity {
     private void showDialogWithItems(ArrayList<String> data, final int type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Make your selection");
-        builder.setItems(items, new DialogInterface.OnClickListener() {
+        final CharSequence[] charSequences = toCharSeq(data);
+        builder.setItems(charSequences, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 // Do something with the selection
                 if (type == 1) {
                     //open browser with url
+                    openBrowser(String.valueOf(charSequences[item]));
                 } else if (type == 2) {
                     //open email apps
+                    openEmail(String.valueOf(charSequences[item]));
                 } else if (type == 3) {
                     //open phone number in dialer
+                    openDialer(String.valueOf(charSequences[item]));
                 }
             }
         });
         AlertDialog alert = builder.create();
         alert.show();
     }
+ public CharSequence[] toCharSeq(ArrayList<String> a){
+        CharSequence [] c=new CharSequence[a.size()];
+        for(int i=0;i<a.size();i++){
+            c[i]=a.get(i);
+        }
+
+        return c;
+
+
+ }
+ public void openBrowser(String url){
+     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+     startActivity(browserIntent);
+ }
+
+ public void openEmail(String email)
+ {
+     Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+     emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+     emailIntent.setType("vnd.android.cursor.item/email");
+     emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {email});
+     //emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My Email Subject");
+     //emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "My email content");
+     startActivity(Intent.createChooser(emailIntent, "Send mail using..."));
+ }
+
+ public void openDialer(String phone){
+     Intent intent = new Intent(Intent.ACTION_DIAL);
+     intent.setData(Uri.parse("tel:"+phone));
+     startActivity(intent);
+ }
+
 }
 
 
