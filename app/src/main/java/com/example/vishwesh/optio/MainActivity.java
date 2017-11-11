@@ -15,13 +15,11 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.vishwesh.optio.OCR.OCRActivity;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -38,6 +36,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                intent.putExtra("type",1);
+
                 startActivity(intent);
             }
         });
@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                intent.putExtra("type",2);
                 startActivity(intent);
             }
         });
@@ -54,6 +55,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OCRActivity.class);
+                intent.putExtra("type",3);
                 startActivity(intent);
             }
         });
