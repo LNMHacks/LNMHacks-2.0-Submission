@@ -231,13 +231,11 @@ public class MainActivity extends Activity {
         for (int i = 0; i < resultarray.length; i++) {
             try {
                 Float.parseFloat(resultarray[i]);
-
-                return;
             } catch (Exception e) {
                 continue;
             }
         }
-
+        openApp(MainActivity.this, "net.one97.paytm");
     }
 
     public static boolean openApp(Context context, String packageName) {
