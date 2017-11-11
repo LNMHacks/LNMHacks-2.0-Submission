@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Optio</string>
+    <string name="service_name">notification_service</string>
+    <string name="action_settings">Notification Setting</string>
+</resources>
