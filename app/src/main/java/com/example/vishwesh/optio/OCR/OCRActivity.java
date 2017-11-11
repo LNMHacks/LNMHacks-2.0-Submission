@@ -4,10 +4,12 @@ import android.Manifest;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
@@ -31,7 +33,7 @@ public class OCRActivity extends AppCompatActivity {
     private SurfaceView cameraView;
     private TextView textBlockContent;
     private CameraSource cameraSource;
-    private  StringBuilder value;
+    private StringBuilder value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,8 @@ public class OCRActivity extends AppCompatActivity {
         textBlockContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),textBlockContent.getText().toString(),Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getApplicationContext(), textBlockContent.getText().toString(), Toast.LENGTH_SHORT).show();
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("data", textBlockContent.getText().toString());
                 clipboard.setPrimaryClip(clip);
@@ -143,6 +146,19 @@ public class OCRActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         cameraSource.release();
+    }
+
+    public static void addAsContactConfirmed(final Context context, String name, String mobile, String email) {
+
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+
+        intent.putExtra(ContactsContract.Intents.Insert.NAME, name);
+        intent.putExtra(ContactsContract.Intents.Insert.PHONE, mobile);
+        intent.putExtra(ContactsContract.Intents.Insert.EMAIL, email);
+
+        context.startActivity(intent);
+
     }
 }
 
