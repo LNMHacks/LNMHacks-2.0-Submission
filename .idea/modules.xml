@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Rahul\AndroidStudioProjects\Optio\Juvo.iml" filepath="C:\Users\Rahul\AndroidStudioProjects\Optio\Juvo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Optio.iml" filepath="$PROJECT_DIR$/.idea/Optio.iml" />
-      <module fileurl="file://C:\Users\Rahul\AndroidStudioProjects\Optio\Optio.iml" filepath="C:\Users\Rahul\AndroidStudioProjects\Optio\Optio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Optio.iml" filepath="$PROJECT_DIR$/Optio.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Rahul\AndroidStudioProjects\Optio\app\app.iml" filepath="C:\Users\Rahul\AndroidStudioProjects\Optio\app\app.iml" />
     </modules>
   </component>
 </project>
