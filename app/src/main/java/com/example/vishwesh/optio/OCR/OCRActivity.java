@@ -60,45 +60,60 @@ public class OCRActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int type = getIntent().getIntExtra("type", 0);
-                ArrayList<String> site=new ArrayList<String>();
-                ArrayList<String> email=new ArrayList<String>();
-                ArrayList<String> mobile=new ArrayList<String>();
-                String name="", jobTitle="";
+                ArrayList<String> site = new ArrayList<String>();
+                ArrayList<String> email = new ArrayList<String>();
+                ArrayList<String> mobile = new ArrayList<String>();
+                String name = "", jobTitle = "";
 
                 String wholeText = textBlockContent.getText().toString();
-                String [] splittedText = wholeText.split("\n");
-                for(int i=0; i<splittedText.length; i++)
-                {
-                    String [] split = splittedText[i].split(" ");
-                    for(int j=0; j<split.length; j++)
-                    {
-                        if(urlPattern.matcher(split[j]).matches()){
+                String[] splittedText = wholeText.split("\n");
+                for (int i = 0; i < splittedText.length; i++) {
+                    String[] split = splittedText[i].split(" ");
+                    for (int j = 0; j < split.length; j++) {
+                        if (urlPattern.matcher(split[j]).matches()) {
                             site.add(split[j]);
-                        }
-                        else if(split[j].startsWith("+91")){
+                        } else if (split[j].startsWith("+91")) {
                             mobile.add(split[j]);
-                        }
-                        else if(pattern.matcher(split[j]).matches()){
+                        } else if (pattern.matcher(split[j]).matches()) {
                             email.add(split[j]);
                         }
                     }
                 }
-                if(type==1)
-                {
+                if (type == 1) {
                     //extract text
-                }else if(type==2)
-                {
+                    if (site.size() > 0) {
+                        if (site.size() == 1) {
+                            //open directly
+                        } else {
+                            //show dialog
+                            showDialogWithItems(site, 2);
+                        }
+                    } else if (email.size() > 0) {
+                        if (email.size() == 1) {
+                            //open directly
+                        } else {
+                            //show dialog
+                            showDialogWithItems(site, 2);
+                        }
+                    } else if (mobile.size() > 0) {
+                        if (mobile.size() == 1) {
+                            //open directly
+                        } else {
+                            //show dialog
+                            showDialogWithItems(site, 3);
+                        }
+                    }
+                } else if (type == 2) {
                     //scan contact
                     //find phone number
 
-                }else if (type==3)
-                {
+                } else if (type == 3) {
                     //poster
                 }
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("data", wholeText);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(getApplicationContext(), "Text copied!!" , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Text copied!!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -208,20 +223,17 @@ public class OCRActivity extends AppCompatActivity {
 
     }
 
-    private void showDialogWithItems(ArrayList<String> data, final int type){
+    private void showDialogWithItems(ArrayList<String> data, final int type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Make your selection");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 // Do something with the selection
-                if(type==1)
-                {
-                    //open broser with url
-                }else if(type==2)
-                {
+                if (type == 1) {
+                    //open browser with url
+                } else if (type == 2) {
                     //open email apps
-                }else if(type==3)
-                {
+                } else if (type == 3) {
                     //open phone number in dialer
                 }
             }
