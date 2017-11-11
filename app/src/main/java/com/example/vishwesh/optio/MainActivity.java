@@ -25,21 +25,12 @@ import java.util.Set;
 
 
 public class MainActivity extends Activity {
-    TextView textv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textv = (TextView) findViewById(R.id.text);
         LocalBroadcastManager.getInstance(this).registerReceiver(onNotice, new IntentFilter("Msg"));
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openApp(MainActivity.this, "net.one97.paytm");
-            }
-        });
     }
 
     @Override
@@ -84,7 +75,6 @@ public class MainActivity extends Activity {
 
             }
             Toast.makeText(context, "body" + result, Toast.LENGTH_SHORT).show();
-            textv.setText(result);
 
             //int id = intent.getIntExtra("icon",0);
 
@@ -100,7 +90,7 @@ public class MainActivity extends Activity {
                 if (byteArray != null) {
                     bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 }
-                Toast.makeText(context, "Title:- " + title + " Text:-" + text, Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, "Title:- " + title + " Text:-" + text, Toast.LENGTH_LONG).show();
                 findCase(text);
             } catch (Exception e) {
                 e.printStackTrace();
