@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
         }
     }
 
+    //extra class tomo
+
     private BroadcastReceiver onNotice = new BroadcastReceiver() {
 
         @Override
@@ -49,6 +51,7 @@ public class MainActivity extends Activity {
             // String pack = intent.getStringExtra("package");
             String title = intent.getStringExtra("title");
             String text = intent.getStringExtra("text");
+            String body = intent.getStringExtra("body");
             //int id = intent.getIntExtra("icon",0);
 
             Context remotePackageContext = null;
@@ -63,7 +66,7 @@ public class MainActivity extends Activity {
                 if (byteArray != null) {
                     bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 }
-                Toast.makeText(context, "Title:- " + title + " Text:-" + text, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Title:- " + title + " Text:-" + text + "Body:- " + body, Toast.LENGTH_LONG).show();
 
             } catch (Exception e) {
                 e.printStackTrace();
