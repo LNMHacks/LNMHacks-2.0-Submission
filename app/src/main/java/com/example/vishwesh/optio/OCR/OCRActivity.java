@@ -88,7 +88,7 @@ public class OCRActivity extends AppCompatActivity {
                             openBrowser(String.valueOf(site.get(0)));
                         } else {
                             //show dialog
-                            showDialogWithItems(site, 2);
+                            showDialogWithItems(site, 1);
                         }
                     } else if (email.size() > 0) {
                         if (email.size() == 1) {
@@ -96,7 +96,7 @@ public class OCRActivity extends AppCompatActivity {
                             openEmail(String.valueOf(email.get(0)));
                         } else {
                             //show dialog
-                            showDialogWithItems(site, 2);
+                            showDialogWithItems(email, 2);
                         }
                     } else if (mobile.size() > 0) {
                         if (mobile.size() == 1) {
@@ -104,7 +104,7 @@ public class OCRActivity extends AppCompatActivity {
                             openDialer(String.valueOf(mobile.get(0)));
                         } else {
                             //show dialog
-                            showDialogWithItems(site, 3);
+                            showDialogWithItems(mobile, 3);
                         }
                     }
                 } else if (type == 2) {
