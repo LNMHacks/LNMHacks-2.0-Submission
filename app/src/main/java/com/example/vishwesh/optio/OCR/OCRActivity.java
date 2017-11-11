@@ -4,11 +4,13 @@ import android.Manifest;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.SparseArray;
@@ -204,6 +206,28 @@ public class OCRActivity extends AppCompatActivity {
 
         context.startActivity(intent);
 
+    }
+
+    private void showDialogWithItems(ArrayList<String> data, final int type){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Make your selection");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                // Do something with the selection
+                if(type==1)
+                {
+                    //open broser with url
+                }else if(type==2)
+                {
+                    //open email apps
+                }else if(type==3)
+                {
+                    //open phone number in dialer
+                }
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
 
