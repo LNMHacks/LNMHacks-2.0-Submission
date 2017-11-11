@@ -108,7 +108,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginRight="15dp"
                     android:layout_toStartOf="@+id/view1"
-                    android:gravity="center_verticalcenter"
+                    android:gravity="center_vertical"
                     android:padding="10dp"
                     android:text="This will allow our users to just scan any visiting card and get their contact added directly." />
 
