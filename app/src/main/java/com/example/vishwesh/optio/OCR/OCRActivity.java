@@ -47,11 +47,34 @@ public class OCRActivity extends AppCompatActivity {
         textBlockContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int type = getIntent().getIntExtra("type", 0);
+                String site="", email="", name="", jobTitle="", phone="";
+                String wholeText = textBlockContent.getText().toString();
+                String [] splittedText = wholeText.split("\n");
+                for(int i=0; i<splittedText.length; i++)
+                {
+                    String [] split = splittedText[i].split(" ");
+                    for(int j=0; j<split.length; j++)
+                    {
 
-                Toast.makeText(getApplicationContext(), textBlockContent.getText().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if(type==1)
+                {
+                    //extract text
+                }else if(type==2)
+                {
+                    //scan contact
+                    //find phone number
+
+                }else if (type==3)
+                {
+                    //poster
+                }
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("data", textBlockContent.getText().toString());
+                ClipData clip = ClipData.newPlainText("data", wholeText);
                 clipboard.setPrimaryClip(clip);
+                Toast.makeText(getApplicationContext(), "Text copied!!" , Toast.LENGTH_SHORT).show();
             }
         });
 
