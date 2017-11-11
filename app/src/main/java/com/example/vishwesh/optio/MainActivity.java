@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -100,7 +101,7 @@ public class MainActivity extends Activity {
                     bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                 }
                 Toast.makeText(context, "Title:- " + title + " Text:-" + text, Toast.LENGTH_LONG).show();
-                findCase(result);
+                findCase(text);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -114,15 +115,16 @@ public class MainActivity extends Activity {
             if (resultarray[i].equals("pay") || resultarray[i].equals("udhaar")) {
                 payMe(result);
                 return;
-            } else if (resultarray[i].equals("tomorrow")
-                    || resultarray[i].equals("date")
-                    || resultarray[i].equals("time")) {
-                if (resultarray[i].equals("tomorrow")) {
+            } else if (resultarray[i].toLowerCase().equals("tomorrow")
+                    || resultarray[i].toLowerCase().equals("date")
+                    || resultarray[i].toLowerCase().equals("time")) {
+                if (resultarray[i].toLowerCase().equals("tomorrow")) {
                     addInCalendar(result, resultarray, 1, i);
-                } else if (resultarray[i].equals("date")) {
+                    return;
+                } else if (resultarray[i].toLowerCase().equals("date")) {
                     addInCalendar(result, resultarray, 2, i);
+                    return;
                 }
-                return;
             }
         }
 
@@ -145,6 +147,42 @@ public class MainActivity extends Activity {
                     timeIndex + 1 < resultarray.length ? resultarray[timeIndex + 1] : "");
             long endTime = startTime + 1000;
             sendCalendarIntent(startTime, endTime, result);
+        } else if (type == 2) {
+            int dateIndex = -1;
+            int timeIndex = -1;
+            for (int i = 0; i < resultarray.length; i++) {
+                if (resultarray[i].contains("/")) {
+                    dateIndex = i;
+                }
+                if (resultarray[i].contains(":")) {
+                    timeIndex = i;
+
+                }
+
+
+            }
+            String[] date = resultarray[dateIndex].split("/");
+            String[] time = resultarray[timeIndex].split(":");
+            Calendar c = Calendar.getInstance();
+            c.set(Integer.parseInt(date[2]), Integer.parseInt(date[1])-1, Integer.parseInt(date[0]));
+            int hour = Integer.parseInt(time[0]);
+            int minute = Integer.parseInt(time[1]);
+            c.set(Calendar.MINUTE, minute);
+            String s1 = timeIndex + 1 < resultarray.length ? resultarray[timeIndex + 1] : "";
+            if (s1.toLowerCase().contains("am") || s1.toLowerCase().contains("pm")) {
+                c.set(Calendar.HOUR, hour);
+                if (s1.toLowerCase().contains("am")) {
+                    c.set(Calendar.AM_PM, 0);
+                } else {
+                    c.set(Calendar.AM_PM, 1);
+                }
+            } else {
+                c.set(Calendar.HOUR_OF_DAY, hour);
+            }
+
+            sendCalendarIntent(c.getTimeInMillis(), c.getTimeInMillis() + 100, result);
+
+
         }
     }
 
