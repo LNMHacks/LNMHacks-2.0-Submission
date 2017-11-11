@@ -25,6 +25,8 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
 
@@ -34,6 +36,14 @@ public class OCRActivity extends AppCompatActivity {
     private TextView textBlockContent;
     private CameraSource cameraSource;
     private StringBuilder value;
+    // Pattern for recognizing a URL, based off RFC 3986
+    private static final Pattern urlPattern = Pattern.compile(
+            "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)"
+                    + "(([\\w\\-]+\\.){1,}?([\\w\\-.~]+\\/?)*"
+                    + "[\\p{Alnum}.,%_=?&#\\-+()\\[\\]\\*$~@!:/{};']*)",
+            Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
+    Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +58,11 @@ public class OCRActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int type = getIntent().getIntExtra("type", 0);
-                String site="", email="", name="", jobTitle="", phone="";
+                ArrayList<String> site=new ArrayList<String>();
+                ArrayList<String> email=new ArrayList<String>();
+                ArrayList<String> mobile=new ArrayList<String>();
+                String name="", jobTitle="";
+
                 String wholeText = textBlockContent.getText().toString();
                 String [] splittedText = wholeText.split("\n");
                 for(int i=0; i<splittedText.length; i++)
@@ -56,7 +70,15 @@ public class OCRActivity extends AppCompatActivity {
                     String [] split = splittedText[i].split(" ");
                     for(int j=0; j<split.length; j++)
                     {
-
+                        if(urlPattern.matcher(split[j]).matches()){
+                            site.add(split[j]);
+                        }
+                        else if(split[j].startsWith("+91")){
+                            mobile.add(split[j]);
+                        }
+                        else if(pattern.matcher(split[j]).matches()){
+                            email.add(split[j]);
+                        }
                     }
                 }
                 if(type==1)
