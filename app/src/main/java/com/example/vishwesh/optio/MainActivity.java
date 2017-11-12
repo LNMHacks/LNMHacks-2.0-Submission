@@ -102,7 +102,7 @@ public class MainActivity extends Activity {
 
 
             }
-            Toast.makeText(context, "body" + result, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "body" + result, Toast.LENGTH_SHORT).show();
 
             //int id = intent.getIntExtra("icon",0);
 
