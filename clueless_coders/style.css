@@ -1,0 +1,33 @@
+a:hover{
+ background-color:#d1d1e0;
+}
+.btn,.btn-outline-success:hover {
+    color: #fff;
+    background-color: #d1d1e0;
+    border-color: #d1d1e0;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #d1d1e0;
+    border-color: #d1d1e0; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #d1d1e0;
+    border-color: #d1d1e0; /*set the color you want here*/
+}
+.centered{
+	font-family:"Comic Sans MS", cursive, sans-serif;
+	color:black;
+	font-size:30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+html,body{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
