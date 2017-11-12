@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyBusiness</string>
+    <string name="title_activity_sales">sales</string>
+    <string-array name="country_arrays">
+        <item>Milk ( GST = 5%)</item>
+        <item>Meat (GST = 12%)</item>
+        <item>Butter and cheese (GST = 12%)</item>
+        <item>coffee and tea ( GST = 5%)</item>
+        <item>Beverages, spirit and vinegar(GST = 12/%)</item>
+        <item>Soaps and detergents (GST = 12%)</item>
+
+    </string-array>
+
+</resources>
+
