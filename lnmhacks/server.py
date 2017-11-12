@@ -162,7 +162,7 @@ def courses1():
     f=[]
     g=[]
     q=[]
-
+    
     response = urllib.urlopen('https://www.udacity.com/public-api/v0/courses')
     json_responses = json.loads(response.read())
 
@@ -208,11 +208,6 @@ def courses2():
             f.append(courses['expected_duration'])
             g.append(courses['expected_duration_unit'].encode('utf-8'))
 
-            print a      
-
-
-
-
 
     return render_template('courses_interest2.html',result=zip(a,b,c,d,e,f,g))
 
@@ -237,7 +232,7 @@ def courses3():
         q=session['interest3'].split()
         if course.find(session['interest3'].lower()) != -1 or course.find(q[0].lower()) != -1 :
             a.append(courses['title'].encode('utf-8'))
-            b.append(courses['short_summary'].encode('utf-8'))
+            b.append(courses['short_summary'])
             c.append(courses['homepage'].encode('utf-8'))
             d.append(courses['image'].encode('utf-8'))
             e.append(courses['level'].encode('utf-8'))
@@ -248,8 +243,24 @@ def courses3():
 
 
 
-
     return render_template('courses_interest3.html',result=zip(a,b,c,d,e,f,g))
+
+
+@app.route('/books1', methods=['POST', 'GET'])
+def books1():
+    
+    lg=libgenapi.Libgenapi(["http://gen.lib.rus.ec"])
+    r = lg.search(session['interest1'],1)
+
+    return render_template('books_interest1.html',result=r)
+
+@app.route('/books2', methods=['POST', 'GET'])
+def books2():
+    
+    lg=libgenapi.Libgenapi(["http://gen.lib.rus.ec"])
+    r = lg.search(session['interest2'],1)
+
+    return render_template('books_interest2.html',result=r)
 
 @app.route('/books3', methods=['POST', 'GET'])
 def books3():
@@ -257,7 +268,7 @@ def books3():
     lg=libgenapi.Libgenapi(["http://gen.lib.rus.ec"])
     r = lg.search(session['interest3'],1)
 
-    return render_template('books_interest3.html',result=r)
+    return render_template('books_interest2.html',result=r)
 
 
 @app.route('/viewinterest', methods=['POST', 'GET'])
