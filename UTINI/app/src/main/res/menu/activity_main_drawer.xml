@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/monthly"
+            android:icon="@drawable/moestimate"
+            android:title="Monthly Estimate" />
+        <item
+            android:id="@+id/product"
+            android:icon="@drawable/prestimate"
+            android:title="Productwise estimate" />
+        <item
+            android:id="@+id/saving"
+            android:icon="@drawable/save"
+            android:title="My Savings" />
+
+    </group>
+
+    <item android:title="App">
+        <menu>
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/setting"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about"
+                android:title="About" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <View
+            android:id="@+id/blank"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 November 2017"
+            android:textColor="#ffffff"
+            android:textSize="19sp"
+            app:layout_constraintTop_toTopOf="@+id/blank"
+            app:layout_constraintLeft_toLeftOf="@+id/blank"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/newtrans"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/add"
+            app:layout_constraintRight_toRightOf="@id/blank"
+            app:layout_constraintTop_toTopOf="@id/date"
+            android:layout_marginEnd="6dp"/>
+        <TextView
+            android:id="@+id/curr_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Expenditure"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/blank"
+            app:layout_constraintLeft_toLeftOf="@+id/blank"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintRight_toLeftOf="@+id/est_saving"
+            android:layout_marginRight="6dp"
+            />
+        <TextView
+            android:id="@+id/est_saving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimated Savings"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/blank"
+            app:layout_constraintRight_toLeftOf="@+id/est_expenditure"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintLeft_toRightOf="@id/curr_exp"
+            android:layout_marginLeft="6dp"
+            />
+        <TextView
+            android:id="@+id/est_expenditure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estimated Expenditure"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/blank"
+            app:layout_constraintLeft_toRightOf="@id/est_saving"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintRight_toRightOf="@id/blank"/>
+        <TextView
+            android:id="@+id/exp_forcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@id/est_expenditure"
+            app:layout_constraintRight_toRightOf="@id/est_expenditure"
+            app:layout_constraintBottom_toTopOf="@id/est_expenditure"/>
+        <TextView
+            android:id="@+id/exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="@+id/curr_exp"
+            app:layout_constraintBottom_toTopOf="@+id/curr_exp"
+            app:layout_constraintRight_toRightOf="@+id/curr_exp"/>
+        <TextView
+            android:id="@+id/saving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/est_saving"
+            app:layout_constraintLeft_toLeftOf="@id/est_saving"
+            app:layout_constraintRight_toRightOf="@id/est_saving"/>
+
+        <!-- <com.github.mikephil.charting.charts.BarChart
+             android:id="@+id/graphBar"
+             android:layout_width="0dp"
+             android:layout_height="300dp"
+             app:layout_constraintTop_toBottomOf="@id/blank"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent">
+
+         </com.github.mikephil.charting.charts.BarChart> -->
+
+        <TextView
+            android:id="@+id/savingGraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Savings history"
+            app:layout_constraintTop_toBottomOf="@id/blank"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="12sp"
+            android:layout_marginTop="12sp"/>
+
+        <com.jjoe64.graphview.GraphView
+            app:layout_constraintTop_toBottomOf="@+id/savingGraph"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:id="@+id/graph"
+            tools:layout_editor_absoluteX="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/mostSpenton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Most spent on"
+            app:layout_constraintTop_toBottomOf="@id/graph"
+            app:layout_constraintLeft_toLeftOf="@id/graph"
+            android:layout_marginTop="12dp"/>
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mostSpenton"
+            android:text="item 1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/amnt1"
+            android:layout_marginStart="12dp"/>
+        <TextView
+            android:id="@id/amnt1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/mostSpenton"
+            android:text="Cost"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/name1"/>
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name1"
+            android:text="item 2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/amnt2"
+            android:layout_marginStart="12dp"/>
+        <TextView
+            android:id="@id/amnt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name1"
+            android:text="Cost"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/name2"/>
+
+        <TextView
+            android:id="@+id/name3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name2"
+            android:text="item 3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/amnt3"
+            android:layout_marginStart="12dp"/>
+        <TextView
+            android:id="@id/amnt3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/name2"
+            android:text="Cost"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/name3"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

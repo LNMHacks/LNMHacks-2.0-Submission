@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1098613815492",
+    "firebase_url": "https://utini-d8d4a.firebaseio.com",
+    "project_id": "utini-d8d4a",
+    "storage_bucket": "utini-d8d4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098613815492:android:f8a36ff5d0a42919",
+        "android_client_info": {
+          "package_name": "com.utini.utini"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098613815492-8l0mk8j14hkb1qtubjdejc0qa9b24t39.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.utini.utini",
+            "certificate_hash": "233de9d328add750a74518e755654225faa58746"
+          }
+        },
+        {
+          "client_id": "1098613815492-6b9kdmhk5k7j0ri51aeidgsqerbit0ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQv-AgLrzFbLGwth7zkBZTYBRCRUS7paI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098613815492-6b9kdmhk5k7j0ri51aeidgsqerbit0ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
