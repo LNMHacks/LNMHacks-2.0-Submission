@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Knight Riders</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="" />
+    <link href="{{ url_for('static', filename='css/style_interests.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#">Knight Riders</a></h1>
+                <p id="subtitle">LNMHacks Study Centre</p>
+            </div>
+            <div id="menu">
+                <ul>
+                    <b><li><a href="user_home.html"><span>Home</span></a></li></b>
+                    <b><li><a href="/courses1"><span>{{session['interest1']}}</span></a></li></b>
+                    <b><li  class="active"><a href="/courses2"><span>{{session['interest2']}}</span></a></li></b>
+                    <b><li><a href="/courses3"><span>{{session['interest3']}}</span></a></li></b>
+                </ul>
+            </div>
+        </div><!-- header -->
+        <div id="sidebar">
+            <h2><a href="/home">Home</a></h2>
+            <!-- <ul>
+                <li><a href="#">Fusce laoreet, ligula et rhoncus</a></li>
+                <li><a href="#">Adipiscing gravida pulvinar eget</a></li>
+                <li><a href="#">Cras consectetur commodo</a></li>
+                <li><a href="#">Vulputate aliquam ipsum dictum</a></li>
+                <li><a href="#">Vestibulum imperdiet accumsan</a></li>
+            </ul> -->
+            <h2><a href="/courses1">Courses</a></h2>
+            <!-- <div class="box">
+                <p>Mauris sollicitudin tincidunt magna vitae semper. Curabitur ut pharetra quam. Integer rhoncus convallis urna vitae mattis.</p>
+            </div> -->
+            <h2><a href="/books1">Books</a></h2>
+            <!-- <ul>
+                <li><a href="#">Suspendisse faucibus purus</a></li>
+                <li><a href="#">Tincidunt nec accumsan</a></li>
+                <li><a href="#">Fusce laoreet, ligula et rhoncus</a></li>
+                <li><a href="#">Adipiscing gravida pulvinar eget</a></li>
+                <li><a href="#">Cras consectetur commodo</a></li>
+            </ul> -->
+            <h2><a href="">Interests</a></h2>
+        </div><!-- sidebar -->
+        <div id="content">
+            <div class="post">
+                <table width="100%">
+                    <tr>
+                        <td style="color: #F51E09">Image</td>
+                        <td style="color: #F51E09">Title</td>
+                        <td style="color: #F51E09">Summary</td>
+                        <td style="color: #F51E09">Duration</td>
+                        <td style="color: #F51E09">Level</td>
+                        <td style="color: #F51E09">Homepage</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</td>
+                        <td>1</td>
+                        <td><img src="images/banner.jpg" width="70px" height="50px"></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</td>
+                        <td>1</td>
+                        <td><img src="images/banner.jpg" width="70px" height="50px"></td>
+                    </tr> -->
+                    {% for courses in result['courses'] %}
+                    
+                    <tr>     
+                                <td><img src="{{courses['image']}}" width="70px" height="50px"></td>
+                                <td>{{ courses['title']  }}</td>
+                                <td>{{courses['short_summary']}}</td>
+                                <td>{{courses['expected_duration']}} {{courses['expected_duration_unit']}}</td>
+                                <td>{{courses['level']}}</td>
+                                <td><a href="{{courses['homepage']}}">Click Here</a></td>
+                                
+                    </tr>
+                            
+                        {% endfor %}
+
+
+
+
+
+
+
+
+                </table>
+            </div>
+        </div>
+                <!-- <h2><a href="#">Terms of Use</a></h2>
+                <p class="postmeta">Posted in <a href="#">Class apent</a> | June 17, 2011 | <a href="#">4 comments</a></p>
+                <div class="entry">
+                    <p>The template is released under <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution</a> license. So you are free to use it for personal or commercial purposes, modify it or redistribute as long as you keep the link back to WebTemplateOcean.com in the footer.</p>
+                    <p>Under no circumstances can you use the template for websites with illegal or immoral (even if legal) content. This includes, but is not limited to pornography, obscenity, homosexuality, abortion, violence, drugs, gambling.</p>
+                    <p>The template contains a public domain image from <a href="http://www.pdphoto.org/">PDPhoto.org</a>. Although public domain pictures are free and with no obligation to credit their authors you should keep in mind that in some cases they may infringe trademark, property or any other rights of others. Therefore, it is you who has to decide whether to use the image, especially if your website will be a commercial one... <a href="#">more</a></p>
+                </div>
+            </div>
+            <div class="post">
+                <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
+                <p class="postmeta">Posted in <a href="#">Lorem ipsum</a> | June 15, 2011 | <a href="#">2 comments</a></p>
+                <div class="entry">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dui quis urna sollicitudin sodales. Fusce laoreet, ligula et rhoncus volutpat, felis magna varius tortor, ac molestie diam lorem in lectus. Aliquam venenatis mollis est, a porttitor ipsum interdum nec. Vestibulum sed risus ac nulla viverra pharetra.</p>
+                    <p>Quisque congue lacus sed odio fermentum tincidunt. Proin vitae nulla velit. Cras consectetur commodo scelerisque. Curabitur leo nisl, blandit at tempus et, interdum at risus. Sed dui augue, pellentesque ac pulvinar id, malesuada eget diam. Integer elementum sem eget tortor faucibus id pellentesque lorem dignissim... <a href="#">more</a></p>
+                </div>
+            </div>
+        </div> --><!-- content -->
+        <div id="footer">
+            <!--<p>Copyright &copy; 2011, designed by <a href="http://www.webtemplateocean.com/">WebTemplateOcean.com</a></p>-->
+        </div>
+    </div><!-- page -->
+</body>
+</html>
