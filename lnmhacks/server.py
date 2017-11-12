@@ -154,14 +154,32 @@ def interest():
 @app.route('/courses1', methods=['POST', 'GET'])
 def courses1():
 
+    a=[]
+    b=[]
+    c=[]
+    d=[]
+    e=[]
+    f=[]
+    g=[]
+    q=[]
+
     response = urllib.urlopen('https://www.udacity.com/public-api/v0/courses')
     json_responses = json.loads(response.read())
 
-    # for courses in json_responses['courses']:
-    #     course = courses['title'].lower()
-    #     if course.find(interest1) != -1:
-    #         courselist.append(courses['title'])
-    return render_template('courses_interest1.html',result=json_responses,result2=0,result3=0)
+    for courses in json_responses['courses']:
+        course = courses['title'].lower()
+        q=session['interest1'].split()
+        if course.find(session['interest1'].lower()) != -1 or course.find(q[0].lower()) != -1 :
+            a.append(courses['title'].encode('utf-8'))
+            b.append(courses['short_summary'].encode('utf-8'))
+            c.append(courses['homepage'].encode('utf-8'))
+            d.append(courses['image'].encode('utf-8'))
+            e.append(courses['level'].encode('utf-8'))
+            f.append(courses['expected_duration'])
+            g.append(courses['expected_duration_unit'].encode('utf-8'))
+
+
+    return render_template('courses_interest1.html',result=zip(a,b,c,d,e,f,g))
             
 @app.route('/courses2', methods=['POST', 'GET'])
 def courses2():
@@ -171,45 +189,67 @@ def courses2():
     c=[]
     d=[]
     e=[]
+    f=[]
+    g=[]
+    q=[]
+
     response = urllib.urlopen('https://www.udacity.com/public-api/v0/courses')
     json_responses = json.loads(response.read())
 
-    # for courses in json_responses['courses']:
-    #     course = courses['title'].lower()
-    #     a=session['interest1'].split()
-    #     if course.find(session['interest1'].lower()) != -1 or course.find(a[0].lower()) != -1 :
+    for courses in json_responses['courses']:
+        course = courses['title'].lower()
+        q=session['interest2'].split()
+        if course.find(session['interest2'].lower()) != -1 or course.find(q[0].lower()) != -1 :
+            a.append(courses['title'].encode('utf-8'))
+            b.append(courses['short_summary'].encode('utf-8'))
+            c.append(courses['homepage'].encode('utf-8'))
+            d.append(courses['image'].encode('utf-8'))
+            e.append(courses['level'].encode('utf-8'))
+            f.append(courses['expected_duration'])
+            g.append(courses['expected_duration_unit'].encode('utf-8'))
+
+            print a      
 
 
 
 
 
-    return render_template('courses_interest2.html',result=json_responses)
+    return render_template('courses_interest2.html',result=zip(a,b,c,d,e,f,g))
 
 @app.route('/courses3', methods=['POST', 'GET'])
 def courses3():
 
 
+    a=[]
+    b=[]
+    c=[]
+    d=[]
+    e=[]
+    f=[]
+    g=[]
+    q=[]
+
     response = urllib.urlopen('https://www.udacity.com/public-api/v0/courses')
     json_responses = json.loads(response.read())
 
+    for courses in json_responses['courses']:
+        course = courses['title'].lower()
+        q=session['interest3'].split()
+        if course.find(session['interest3'].lower()) != -1 or course.find(q[0].lower()) != -1 :
+            a.append(courses['title'].encode('utf-8'))
+            b.append(courses['short_summary'].encode('utf-8'))
+            c.append(courses['homepage'].encode('utf-8'))
+            d.append(courses['image'].encode('utf-8'))
+            e.append(courses['level'].encode('utf-8'))
+            f.append(courses['expected_duration'])
+            g.append(courses['expected_duration_unit'].encode('utf-8'))
+            
 
-    return render_template('courses_interest3.html',result=json_responses)
 
-@app.route('/books1', methods=['POST', 'GET'])
-def books1():
-    
-    lg=libgenapi.Libgenapi(["http://gen.lib.rus.ec"])
-    r = lg.search(session['interest1'],1)
 
-    return render_template('books_interest1.html',result=r)
 
-@app.route('/books2', methods=['POST', 'GET'])
-def books2():
-    
-    lg=libgenapi.Libgenapi(["http://gen.lib.rus.ec"])
-    r = lg.search(session['interest2'],1)
 
-    return render_template('books_interest2.html',result=r)
+    return render_template('courses_interest3.html',result=zip(a,b,c,d,e,f,g))
 
 @app.route('/books3', methods=['POST', 'GET'])
 def books3():

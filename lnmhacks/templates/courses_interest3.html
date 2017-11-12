@@ -71,15 +71,15 @@
                         <td>1</td>
                         <td><img src="images/banner.jpg" width="70px" height="50px"></td>
                     </tr> -->
-                    {% for courses in result['courses'] %}
+                    {% for a, b, c, d, e, f, g in result %}
                     
                     <tr>     
-                                <td><img src="{{courses['image']}}" width="70px" height="50px"></td>
-                                <td>{{ courses['title']  }}</td>
-                                <td>{{courses['short_summary']}}</td>
-                                <td>{{courses['expected_duration']}} {{courses['expected_duration_unit']}}</td>
-                                <td>{{courses['level']}}</td>
-                                <td><a href="{{courses['homepage']}}">Click Here</a></td>
+                                <td><img src="{{ d }}" width="70px" height="50px"></td>
+                                <td>{{ a }}</td>
+                                <td>{{ b }}</td>
+                                <td>{{ f }} {{ g }}</td>
+                                <td>{{ e }}</td>
+                                <td><a href="{{ c }}">Click Here</a></td>
                                 
                     </tr>
                             
