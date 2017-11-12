@@ -1,0 +1,48 @@
+{% load bootstrap3 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load staticfiles %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<html>
+<head>
+  <title>Upload File</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+</head>
+  <body>
+
+
+    <div class="container">
+    	<div class="row">
+
+    	   <div class="col-md-12">
+    	      <form enctype="multipart/form-data" method="post">
+               {% csrf_token %}
+
+
+
+
+                  <div class="form-group files color">
+                    <label>Upload Your File </label>
+                    {{ data_form }}
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+               Create Graph
+            </button>
+
+
+              </form>
+
+
+    	  </div>
+    	</div>
+      <img src="1.png">
+      <img src="2.png">
+      <img src="3.png">
+
+    </div>
+
+
+  </body>
+</html>

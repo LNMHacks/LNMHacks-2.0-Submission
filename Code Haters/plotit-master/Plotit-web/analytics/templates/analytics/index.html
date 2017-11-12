@@ -1,0 +1,132 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Graph Plotter</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.css" rel="stylesheet" type="text/css">
+        <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link rel="stylesheet" href="http://www.askprateek.com/style.css">
+        <style>
+  body {
+      position: relative;
+  }
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+
+
+  </style>
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+      <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">PlotIt</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Data Table</a></li>
+          <li><a href="#section2">Graph Creater</a></li>
+          <!--<li><a href="#section3">Section 3</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section41">Section 4-1</a></li>
+              <li><a href="#section42">Section 4-2</a></li>
+            </ul>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <h4>Sample data in the record</h4>
+</div>
+<div id="section1" class="container-fluid">
+
+{{ data | safe }}
+
+</div>
+<div id="section2" class="container-fluid">
+<form method="post" >
+  <div class="form-group">
+  <label for="yaxis">Y - Axis</label>
+  <select class="form-control" id="yaxis" name="yaxis">
+    {% for column in columns %}
+  <option>{{column}}</option>
+  {% endfor %}
+
+  </select>
+</div>
+<div class="form-group">
+<label for="xaxis">X - Axis</label>
+<select class="form-control" id="xaxis" name="xaxis">
+  {% for column in columns %}
+<option>{{column}}</option>
+{% endfor %}
+
+</select>
+</div>
+<div class="form-group">
+<label for="graphtype">Type of Graph</label>
+<select class="form-control" id="graphtype" name="graphtype">
+
+<option>Line Graph</option>
+<option>Scatter Plot</option>
+<option>Bar Chat</option>
+
+
+</select>
+</div>
+
+<br><br>
+    <div class="row">
+      <div class="col s12">
+        <button class="button">Draw Graph</button>
+      </div>
+    </div>
+
+  </form>
+  {% if message %}
+
+  <script> alert.("{{message}")</script>
+  {% endif %}
+
+
+
+
+            {{ div | safe }}
+
+</div>
+
+
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.0.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.0.min.js"></script>
+        {{ script | safe }}
+    </body>
+</html>
