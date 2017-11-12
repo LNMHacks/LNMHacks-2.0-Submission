@@ -1,0 +1,10 @@
+[
+    {
+        "CATEGORY": "Electronics > Headphones", 
+        "ORIGINAL_PRICE": "599.00", 
+        "NAME": "Mi Basic In-Ear Headphones with Mic (Matte Black)", 
+        "URL": "https://www.amazon.in/Mi-Basic-Headphones-Matte-Black/dp/B06XBSBSGF", 
+        "SALE_PRICE": "599.00", 
+        "AVAILABILITY": "In stock."
+    }
+]
