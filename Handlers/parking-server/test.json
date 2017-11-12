@@ -1,0 +1,276 @@
+{
+  "uuid": "",
+  "data_type": "alpr_results",
+  "epoch_time": 1510462320465,
+  "processing_time": {
+    "total": 440.8340000009048,
+    "plates": 59.8057861328125,
+    "vehicles": 326.3889999980165
+  },
+  "img_height": 333,
+  "img_width": 442,
+  "results": [
+    {
+      "plate": "MHOV888",
+      "confidence": 76.55062103271484,
+      "region_confidence": 0,
+      "vehicle_region": {
+        "y": 29,
+        "x": 61,
+        "height": 304,
+        "width": 304
+      },
+      "region": "",
+      "plate_index": 0,
+      "processing_time_ms": 69.39000701904297,
+      "candidates": [
+        {
+          "matches_template": 0,
+          "plate": "MHOV888",
+          "confidence": 76.55062103271484
+        },
+        {
+          "matches_template": 0,
+          "plate": "MH0V888",
+          "confidence": 73.41593933105469
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHV888",
+          "confidence": 69.63533020019531
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHDV888",
+          "confidence": 69.21441650390625
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHUV888",
+          "confidence": 69.21368408203125
+        },
+        {
+          "matches_template": 0,
+          "plate": "MH9V888",
+          "confidence": 69.21331787109375
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHO888",
+          "confidence": 65.43061828613281
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHOV88",
+          "confidence": 65.28966522216797
+        },
+        {
+          "matches_template": 0,
+          "plate": "MOV888",
+          "confidence": 65.14802551269531
+        },
+        {
+          "matches_template": 0,
+          "plate": "MHOV886",
+          "confidence": 65.11224365234375
+        }
+      ],
+      "coordinates": [
+        {
+          "y": 220,
+          "x": 166
+        },
+        {
+          "y": 221,
+          "x": 259
+        },
+        {
+          "y": 252,
+          "x": 258
+        },
+        {
+          "y": 251,
+          "x": 167
+        }
+      ],
+      "vehicle": {
+        "color": [
+          {
+            "confidence": 99.99970245361328,
+            "name": "red"
+          },
+          {
+            "confidence": 0.0001519726065453142,
+            "name": "gray"
+          },
+          {
+            "confidence": 6.247212149901316e-05,
+            "name": "black"
+          },
+          {
+            "confidence": 4.9419897550251335e-05,
+            "name": "blue"
+          },
+          {
+            "confidence": 2.053225580311846e-05,
+            "name": "yellow"
+          },
+          {
+            "confidence": 5.076301022199914e-06,
+            "name": "gold"
+          },
+          {
+            "confidence": 1.0876934766201884e-06,
+            "name": "green"
+          },
+          {
+            "confidence": 3.485445176920621e-08,
+            "name": "silver"
+          },
+          {
+            "confidence": 2.6603899083710303e-09,
+            "name": "_ignore_"
+          },
+          {
+            "confidence": 1.883277755965196e-09,
+            "name": "white"
+          }
+        ],
+        "make": [
+          {
+            "confidence": 99.99946594238281,
+            "name": "volkswagen"
+          },
+          {
+            "confidence": 0.0005230893730185926,
+            "name": "dodge"
+          },
+          {
+            "confidence": 9.046927516465075e-06,
+            "name": "toyota"
+          },
+          {
+            "confidence": 1.6074046698122402e-06,
+            "name": "scion"
+          },
+          {
+            "confidence": 1.08700430700992e-06,
+            "name": "porsche"
+          },
+          {
+            "confidence": 5.025756308896234e-07,
+            "name": "honda"
+          },
+          {
+            "confidence": 1.333639971790035e-07,
+            "name": "mazda"
+          },
+          {
+            "confidence": 7.101277077481427e-08,
+            "name": "mini"
+          },
+          {
+            "confidence": 7.091301768014091e-08,
+            "name": "kia"
+          },
+          {
+            "confidence": 3.245761703851713e-08,
+            "name": "fiat"
+          }
+        ],
+        "body_type": [
+          {
+            "confidence": 99.9986801147461,
+            "name": "sedan-compact"
+          },
+          {
+            "confidence": 0.001132141100242734,
+            "name": "suv-crossover"
+          },
+          {
+            "confidence": 0.000149784711538814,
+            "name": "sedan-wagon"
+          },
+          {
+            "confidence": 3.551265035639517e-05,
+            "name": "sedan-convertible"
+          },
+          {
+            "confidence": 6.998286153248046e-06,
+            "name": "sedan-standard"
+          },
+          {
+            "confidence": 7.556583803136618e-09,
+            "name": "van-mini"
+          },
+          {
+            "confidence": 4.027933986350263e-09,
+            "name": "sedan-sport"
+          },
+          {
+            "confidence": 2.6481921100440786e-09,
+            "name": "truck-standard"
+          },
+          {
+            "confidence": 1.2042099539755213e-09,
+            "name": "antique"
+          },
+          {
+            "confidence": 3.354273803157781e-10,
+            "name": "van-full"
+          }
+        ],
+        "make_model": [
+          {
+            "confidence": 69.82241821289062,
+            "name": "volkswagen_golf"
+          },
+          {
+            "confidence": 28.94747543334961,
+            "name": "volkswagen_gti"
+          },
+          {
+            "confidence": 0.9699643850326538,
+            "name": "volkswagen_beetle"
+          },
+          {
+            "confidence": 0.2389286458492279,
+            "name": "volkswagen_rabbit"
+          },
+          {
+            "confidence": 0.011645722202956676,
+            "name": "volkswagen_tiguan"
+          },
+          {
+            "confidence": 0.0022516746539622545,
+            "name": "volvo_c30"
+          },
+          {
+            "confidence": 0.0016916501335799694,
+            "name": "scion_iq"
+          },
+          {
+            "confidence": 0.0013741126749664545,
+            "name": "volkswagen_r32"
+          },
+          {
+            "confidence": 0.0009746446157805622,
+            "name": "toyota_yaris"
+          },
+          {
+            "confidence": 0.0008361315703950822,
+            "name": "volkswagen_jetta"
+          }
+        ]
+      },
+      "matches_template": 0,
+      "requested_topn": 10
+    }
+  ],
+  "credits_monthly_used": 16,
+  "version": 2,
+  "credits_monthly_total": 2000,
+  "error": false,
+  "regions_of_interest": [],
+  "credit_cost": 2
+}
