@@ -1,0 +1,71 @@
+.title{
+	font-family: 'Raleway', sans-serif;
+	text-align: left;
+	color: rgb(900,500,100);
+	height: 100px;
+}
+
+.link{
+	text-align: right;
+
+}
+
+.courses{
+	background-image: url(https://image.freepik.com/free-photo/back-to-school-concept-with-pile-of-books_23-2147662320.jpg);
+    background-position: center center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    height: 800px;
+  /*  color: darkred;*/
+}
+
+.image{
+	margin: auto;
+}
+
+body{
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+
+.books{
+	background-image: url(https://image.freepik.com/free-photo/stack-of-various-books-on-a-table_1252-710.jpg);
+	background-position: center center;
+	font-family: 'Raleway', sans-serif;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 30px;
+	padding: 0;
+	height: 800px;
+}
+
+.blogs{
+	background-image: url(https://image.freepik.com/free-photo/business-man-using-laptop-computer-male-hand-typing-on-laptop-keyboard_2361-141.jpg);
+	background-position: center center;
+	font-family: 'Raleway', sans-serif;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 30px;
+	padding: 0;
+	height: 800px;
+}
+
+.revision{
+	background-image: url(https://image.freepik.com/free-photo/cheerful-student-writing-and-holding-books_1098-3439.jpg);
+	background-position: center center;
+	font-family: 'Raleway', sans-serif;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 30px;
+	padding: 0;
+	height: 800px;
+}
+
+.end{
+	text-align: center;
+	color: midnightblue;
+}
