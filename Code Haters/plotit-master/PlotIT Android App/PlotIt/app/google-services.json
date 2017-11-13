@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "441082873965",
+    "firebase_url": "https://plotit-6430c.firebaseio.com",
+    "project_id": "plotit-6430c",
+    "storage_bucket": "plotit-6430c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441082873965:android:9c82ae2c7926fce1",
+        "android_client_info": {
+          "package_name": "com.example.plotit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441082873965-easpa9l2kvp3j3fqv1avlnqcqul0e8nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.plotit",
+            "certificate_hash": "bfbe500eab19098f243607126b6f83ff6194a1d7"
+          }
+        },
+        {
+          "client_id": "441082873965-r5dov86n07lk4hu3oqmhu9lefl0bi8nl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGKiQgGS9kRRiHLGuQu3quxISdRjpb6Fg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441082873965-r5dov86n07lk4hu3oqmhu9lefl0bi8nl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

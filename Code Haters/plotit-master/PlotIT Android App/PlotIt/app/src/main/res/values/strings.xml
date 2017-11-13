@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Plotit</string>
+    <string name="chooser">Choose option</string>
+    <string name="sign_in_err">Something went wrong, Please try agian.</string>
+    <string name="logIn_sucess">Logging You In, Welcome!</string>
+    <string name="sameXY_values_error">X and Y values can\'t be the same, Please Select again!</string>
+    <string name="same_XY_dialog_title">Oops</string>
+    <string name="ok">OK</string>
+    <string name="double_back_press">Please click Back again to exit.</string>
+    <string name="image_url">image_url</string>
+</resources>
