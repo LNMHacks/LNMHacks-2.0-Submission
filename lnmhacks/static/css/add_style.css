@@ -1,0 +1,264 @@
+@CHARSET "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/*body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+	background-image:url("images/office3.jpg");
+	background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}*/
+
+.container2 input {
+    width: 100%;
+    padding: 2% 2%;
+    margin: 3% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #8dbeef;
+}
+
+
+
+.modal-content {
+    margin: 4% auto auto auto; /* 9% from the top, auto from the bottom and centered */
+    border-radius: 0%;
+    width: 30%;
+    border: 2px solid #8dbeef;
+    padding-bottom: 15px;
+    background-color: #c2d5e8; /* Fallback color */
+}
+
+
+.container2 {
+    padding: 3%;
+}
+
+
+/*button {
+    background-color: rgb(46,204,113);
+    color: white;
+    padding: 2% 3%;
+    margin: 3% 0;
+    /*margin-top: 8px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+  */
+
+.drop_down {
+    width: 100%;
+    padding: 2% 2%;
+    margin: 3% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #8dbeef;
+}
+
+label{
+    /*color: rgb(46,204,113);*/
+    color: rgb(8, 145, 51);
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*.styled-select {
+   overflow: hidden;
+   width: 240px;
+}*/
+.styled-select {
+	  width: 100%;
+    padding: 2% 2%;
+    margin: 3% 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.back-to-admin {
+	font-family: 'Raleway', sans-serif;
+	font-size: 12px;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	display: block;
+}
+/*.styled-select select {
+   background: white;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   /*width: 268px;
+}
+/*
+.styled-select.slate {
+   height: 34px;
+   width: 240px;
+}
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+*/
+
+/*
+
+ul{
+    background-color:   #A9A9A9;
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ffffff;
+}
+
+
+a {
+    color: #DC7633;
+}
+
+b {
+    color: #DC7633;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}
+
+
+ /*a.acti:hover{
+    background-color: white;
+    color: #A9A9A9;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+ a.acti:visited{
+    background-color: white;
+    color: #A9A9A9;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+a:link, a:visited {
+    background-color:   #A9A9A9 ;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: white;
+    color:#A9A9A9;
+    padding: 5px 10px;
+}
+
+.select-style {
+    border: 3px solid #A9A9A9;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #ffffff url("http://localhost/project/down.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 100%;
+     margin: auto;
+     display: block;
+     text-align: center;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+ a.logout:hover{
+    background-color: #DC7633;
+    color: white;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: solid white 2px;
+    position:absolute;
+    right:0px;
+}
+
+ a.logout:link, a.logout:active , .logout:visited{
+    background-color: white;
+    color: #DC7633;
+    padding: 3px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: solid #DC7633 2px;
+    position:absolute;
+    right:0px;
+}
+.nav{
+    width: 100%;
+}
+*/
+
+.select-style{
+  display: none;
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+      nav ul     { display: none; }
+  .select-style{ display: inline-block; }
+  .modal-content {width: 70%;}
+
+}
+
+@media only screen and (max-width: 400px) {
+  .modal-content {width: 90%;}
+
+}
+
+.mssgs {
+    font-size: 13px;
+    color: white;
+    background-color: #DC7633;
+}
+
+b.boll {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+}
